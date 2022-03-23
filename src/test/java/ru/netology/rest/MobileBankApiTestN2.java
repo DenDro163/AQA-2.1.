@@ -21,9 +21,8 @@ class MobileBankApiTestN2 {
                 .body("", hasSize(3))//Проверяем размер тела ответа
                 //Обращаемся к полю "currency" элементов тела ответа
                 .body("[0].currency", equalTo("RUB"))//Обращаемся к элементу по индексу
-                .body("[1].currency",equalTo("USD"))
-                .body("[2].currency",equalTo("USD"))
-                .body("[0].balance", greaterThanOrEqualTo(0))
+                .body("[1].currency", equalTo("USD"))
+                .body("[2].currency", equalTo("RUB"))
                 .body(matchesJsonSchemaInClasspath("accounts.schema.json"));
     }
 }
